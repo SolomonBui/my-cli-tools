@@ -57,3 +57,17 @@ node check-worklog-daemon.mjs
 Wrapper để chạy MCP servers qua corporate proxy (HTTP/HTTPS proxy với authentication).
 
 node proxy-wrapper.mjs
+
+Cấu trúc file
+├── readfile.cjs          # Đọc file text
+├── read-pdf.mjs          # Đọc PDF (ESM)
+├── read-pdf.cjs          # Đọc PDF (CJS)
+├── check-worklog.mjs     # Check worklog Jira
+├── check-worklog-daemon.mjs  # Daemon nhắc log work
+├── proxy-wrapper.mjs     # Proxy wrapper cho MCP
+└── exif-tool-package.json    # package.json cho exif tool (index.js riêng)
+Ghi chú
+Các tool này thiết kế chạy trên Windows với Node portable
+Không dùng .cmd/.bat wrapper (bị Group Policy block)
+Chạy trực tiếp: node <script> <args>
+Corporate proxy: dùng proxy-wrapper.mjs cho các kết nối external
